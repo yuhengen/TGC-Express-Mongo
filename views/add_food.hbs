@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{{#extends 'base'}}
+
+{{#block 'content'}}
     <form method="POST">
         <div>
-            <label>Date:</label>
-            <input type="date" name="date"/>
+            <label class="form-label mt-3">Date:</label>
+            <input type="date" name="date" class="form-control"/>
         </div>
         <div>
-            <label>Name:</label>
-            <input type="text" name="name"/>
+            <label class="form-label mt-3">Name:</label>
+            <input type="text" name="name" class="form-control"/>
         </div>
         <div>
-            <label>Meal:</label>
-            <select name="meal">
+            <label class="form-label mt-3">Meal:</label>
+            <select name="meal" class="form-control">
                 <option value="breakfast">Breakfast</option>
                 <option value="lunch">Lunch</option>
                 <option value="dinner">Dinner</option>
@@ -25,11 +20,11 @@
             </select>
         </div>
         <div>
-            <label>Calories</label>
-            <input type="text" name="calories"/>
+            <label class="form-label mt-3">Calories</label>
+            <input type="text" name="calories" class="form-control"/>
         </div>
         <div>
-            <label>Tags</label>
+            <label class="form-label mt-3">Tags</label>
             <div>
                 <input name="tags" type="checkbox" value="unhealthy"><label>Unhealthy</label>
                 <input name="tags" type="checkbox" value="oily"><label>Oily</label>
@@ -39,6 +34,11 @@
                 <input name="tags" type="checkbox" value="impossible-meat"><label>Impossible Meat</label>
             </div>
         </div>
+        <div>
+        <input type="submit" value="Submit" class="btn btn-primary mt-3"/>
+        <a href="/food" class="btn btn-danger mt-3">Cancel</a>
+        </div>
     </form>
-</body>
-</html>
+{{/block}}
+
+{{/extends}}
