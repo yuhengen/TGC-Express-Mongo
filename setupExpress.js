@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
+const passport = require('./passport/setup');
 
 function setupExpressApp(app) {
     app.set('view engine', 'hbs')
@@ -25,6 +26,10 @@ function setupExpressApp(app) {
         res.locals.error_messages = req.flash('error_messages');
         next();
     })
+
+    // Insert way at the end
+    app.use(passport.initialize());
+    app.use(passport.session())
 }
 
 module.exports = { setupExpressApp };

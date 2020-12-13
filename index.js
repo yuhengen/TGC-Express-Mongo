@@ -18,7 +18,9 @@ async function main() {
     await MongoUtil.connect(MONGO_URL, "tgc9_cico");
 
     const foodRoutes = require('./routes/foodRoutes')
+    const userRoutes = require('./routes/userRoutes')
     app.use('/food', foodRoutes)
+    app.use('/users', userRoutes)
 }
 
 main();
